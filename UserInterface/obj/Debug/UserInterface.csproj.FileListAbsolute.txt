@@ -12,3 +12,5 @@ F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserIn
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customers.CustomersForm.resources
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Base.BaseAddEditForm.resources
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customers.CustomersAddForm.resources
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\InputTextKontrolka.dll
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.csproj.CopyComplete

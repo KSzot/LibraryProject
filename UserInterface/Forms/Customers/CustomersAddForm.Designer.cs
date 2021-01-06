@@ -42,6 +42,8 @@
             this.labelAddress = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.inputLabelFirstName = new InputTextKontrolka.InputLabel();
+            this.inputLabelLastName = new InputTextKontrolka.InputLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxGeneral.SuspendLayout();
             this.groupBoxContact.SuspendLayout();
@@ -68,6 +70,8 @@
             // 
             // groupBoxGeneral
             // 
+            this.groupBoxGeneral.Controls.Add(this.inputLabelLastName);
+            this.groupBoxGeneral.Controls.Add(this.inputLabelFirstName);
             this.groupBoxGeneral.Controls.Add(this.textBoxAge);
             this.groupBoxGeneral.Controls.Add(this.labelAge);
             this.groupBoxGeneral.Controls.Add(this.comboBoxGender);
@@ -183,6 +187,28 @@
             this.buttonCancel.Text = "Anuluj";
             this.buttonCancel.UseVisualStyleBackColor = false;
             // 
+            // inputLabelFirstName
+            // 
+            this.inputLabelFirstName.CzcionkaLabel = InputTextKontrolka.InputLabel.LabelFontStyle.Regular;
+            this.inputLabelFirstName.Location = new System.Drawing.Point(9, 35);
+            this.inputLabelFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputLabelFirstName.Name = "inputLabelFirstName";
+            this.inputLabelFirstName.Size = new System.Drawing.Size(478, 40);
+            this.inputLabelFirstName.TabIndex = 6;
+            this.inputLabelFirstName.TekstInput = "";
+            this.inputLabelFirstName.TekstLabel = "Imię                 ";
+            // 
+            // inputLabelLastName
+            // 
+            this.inputLabelLastName.CzcionkaLabel = InputTextKontrolka.InputLabel.LabelFontStyle.Regular;
+            this.inputLabelLastName.Location = new System.Drawing.Point(9, 76);
+            this.inputLabelLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.inputLabelLastName.Name = "inputLabelLastName";
+            this.inputLabelLastName.Size = new System.Drawing.Size(447, 40);
+            this.inputLabelLastName.TabIndex = 7;
+            this.inputLabelLastName.TekstInput = "";
+            this.inputLabelLastName.TekstLabel = "Nazwisko       ";
+            // 
             // CustomersAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -222,5 +248,7 @@
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private InputTextKontrolka.InputLabel inputLabelLastName;
+        private InputTextKontrolka.InputLabel inputLabelFirstName;
     }
 }

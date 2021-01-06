@@ -58,5 +58,10 @@ namespace UserInterface.Forms.Customers
         }
         #endregion
 
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            CustomersAddForm customersAddForm = new CustomersAddForm();
+            customersAddForm.ShowDialog();
+        }
     }
 }

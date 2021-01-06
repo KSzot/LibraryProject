@@ -1,0 +1,11 @@
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\UserInterface.exe.config
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\UserInterface.exe
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\UserInterface.pdb
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.csprojAssemblyReference.cache
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Base.BaseForm.resources
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Properties.Resources.resources
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.csproj.GenerateResource.cache
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.csproj.CoreCompileInputs.cache
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.exe
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.pdb
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.MainForm.resources

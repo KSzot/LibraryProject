@@ -30,13 +30,13 @@
         {
             this.tabControlTop = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
-            this.buttonHuman = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.buttonBook = new System.Windows.Forms.Button();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabelUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.toolStripStatusLabelUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.buttonBook = new System.Windows.Forms.Button();
+            this.buttonHuman = new System.Windows.Forms.Button();
             this.tabControlTop.SuspendLayout();
             this.tabPageGeneral.SuspendLayout();
             this.statusStripMain.SuspendLayout();
@@ -57,7 +57,7 @@
             this.tabPageGeneral.Controls.Add(this.buttonBook);
             this.tabPageGeneral.Controls.Add(this.splitter1);
             this.tabPageGeneral.Controls.Add(this.buttonHuman);
-            this.tabPageGeneral.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageGeneral.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 23);
             this.tabPageGeneral.Name = "tabPageGeneral";
             this.tabPageGeneral.Padding = new System.Windows.Forms.Padding(3);
@@ -66,21 +66,6 @@
             this.tabPageGeneral.Text = "Ogólne";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
             // 
-            // buttonHuman
-            // 
-            this.buttonHuman.BackColor = System.Drawing.Color.White;
-            this.buttonHuman.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonHuman.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHuman.Image = global::UserInterface.Properties.Resources.man32;
-            this.buttonHuman.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHuman.Location = new System.Drawing.Point(3, 3);
-            this.buttonHuman.Name = "buttonHuman";
-            this.buttonHuman.Size = new System.Drawing.Size(112, 44);
-            this.buttonHuman.TabIndex = 1;
-            this.buttonHuman.Text = "Klienci";
-            this.buttonHuman.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonHuman.UseVisualStyleBackColor = false;
-            // 
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(115, 3);
@@ -88,21 +73,6 @@
             this.splitter1.Size = new System.Drawing.Size(3, 44);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
-            // 
-            // buttonBook
-            // 
-            this.buttonBook.BackColor = System.Drawing.Color.White;
-            this.buttonBook.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonBook.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBook.Image = global::UserInterface.Properties.Resources.open_book32;
-            this.buttonBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBook.Location = new System.Drawing.Point(118, 3);
-            this.buttonBook.Name = "buttonBook";
-            this.buttonBook.Size = new System.Drawing.Size(118, 44);
-            this.buttonBook.TabIndex = 3;
-            this.buttonBook.Text = "Zbiory";
-            this.buttonBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonBook.UseVisualStyleBackColor = false;
             // 
             // statusStripMain
             // 
@@ -122,14 +92,6 @@
             this.toolStripStatusLabelVersion.Size = new System.Drawing.Size(75, 17);
             this.toolStripStatusLabelVersion.Text = "Wersja: 1.0.0";
             // 
-            // toolStripStatusLabelUser
-            // 
-            this.toolStripStatusLabelUser.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabelUser.Image = global::UserInterface.Properties.Resources.man;
-            this.toolStripStatusLabelUser.Name = "toolStripStatusLabelUser";
-            this.toolStripStatusLabelUser.Size = new System.Drawing.Size(132, 17);
-            this.toolStripStatusLabelUser.Text = "Użytkownik: Krystian";
-            // 
             // tabControlMain
             // 
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -140,6 +102,47 @@
             this.tabControlMain.Size = new System.Drawing.Size(834, 452);
             this.tabControlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlMain.TabIndex = 2;
+            this.tabControlMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlMain_DrawItem);
+            this.tabControlMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControlMain_MouseDown);
+            // 
+            // toolStripStatusLabelUser
+            // 
+            this.toolStripStatusLabelUser.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabelUser.Image = global::UserInterface.Properties.Resources.man;
+            this.toolStripStatusLabelUser.Name = "toolStripStatusLabelUser";
+            this.toolStripStatusLabelUser.Size = new System.Drawing.Size(132, 16);
+            this.toolStripStatusLabelUser.Text = "Użytkownik: Krystian";
+            // 
+            // buttonBook
+            // 
+            this.buttonBook.BackColor = System.Drawing.Color.White;
+            this.buttonBook.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonBook.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBook.Image = global::UserInterface.Properties.Resources.open_book32;
+            this.buttonBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBook.Location = new System.Drawing.Point(118, 3);
+            this.buttonBook.Name = "buttonBook";
+            this.buttonBook.Size = new System.Drawing.Size(118, 44);
+            this.buttonBook.TabIndex = 3;
+            this.buttonBook.Text = "Zbiory";
+            this.buttonBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonBook.UseVisualStyleBackColor = false;
+            // 
+            // buttonHuman
+            // 
+            this.buttonHuman.BackColor = System.Drawing.Color.White;
+            this.buttonHuman.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonHuman.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHuman.Image = global::UserInterface.Properties.Resources.man32;
+            this.buttonHuman.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHuman.Location = new System.Drawing.Point(3, 3);
+            this.buttonHuman.Name = "buttonHuman";
+            this.buttonHuman.Size = new System.Drawing.Size(112, 44);
+            this.buttonHuman.TabIndex = 1;
+            this.buttonHuman.Text = "Klienci";
+            this.buttonHuman.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonHuman.UseVisualStyleBackColor = false;
+            this.buttonHuman.Click += new System.EventHandler(this.buttonHuman_Click);
             // 
             // MainForm
             // 

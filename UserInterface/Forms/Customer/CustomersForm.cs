@@ -55,7 +55,15 @@ namespace UserInterface.Forms.Customer
         private void InitializeData()
         {
             LibraryServiceClient libraryService = new LibraryServiceClient();
-            klienciBindingSource.DataSource = libraryService.GetAllClient();
+            //klienciBindingSource.DataSource = libraryService.GetAllClient();
+            IList<Klienci> kliencis = libraryService.GetAllClient();
+            foreach (var item in kliencis)
+            {
+                klienciBindingSource.Add(item);
+            }
+            //IList<Klienci> kliencis = (IList<Klienci>)(IEnumerable<Klienci>)libraryService.GetAllClient();
+            //klienciBindingSource.DataSource = kliencis.AsEnumerable();
+            //dataGridViewCustomers.DataSource = klienciBindingSource;
         }
 
 
@@ -76,28 +84,15 @@ namespace UserInterface.Forms.Customer
                 {
                     LibraryServiceClient api = new LibraryServiceClient();
                     api.AddClientToDatabase(eventArgs.Klienci);
-                    Klienci client = api.GetLastClient();
-                    klienciBindingSource.DataSource = api.GetAllClient();
+                    //Klienci client = api.GetLastClient();
+                    //klienciBindingSource.DataSource = api.GetAllClient();
+                    klienciBindingSource.Add(api.GetLastClient());
                     dataGridViewCustomers.ClearSelection();
                     dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
                 }
                     
                 
             };
-
-            //frm.ReloadEmployees += (s, ea) =>
-            //{
-            //    EmployeeEventArgs evetArgs = ea as EmployeeEventArgs;
-            //    if (evetArgs != null)
-            //    {
-            //        EmployeeViewModel employee
-            //            = MappingHelper.MapEmployeeModelToEmployeeViewModel(evetArgs.Employee);
-            //        bsEmployees.Add(employee);
-
-            //        dgvEmployees.ClearSelection();
-            //        dgvEmployees.Rows[dgvEmployees.Rows.Count - 1].Selected = true;
-            //    }
-            //};
             frm.ShowDialog();
         }
     }

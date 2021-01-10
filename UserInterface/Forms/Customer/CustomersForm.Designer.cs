@@ -112,12 +112,14 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(112, 34);
             this.buttonAdd.TabIndex = 2;
-            this.buttonAdd.Text = "Klienci";
+            this.buttonAdd.Text = "Dodaj";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // dataGridViewCustomers
             // 
+            this.dataGridViewCustomers.AllowUserToAddRows = false;
+            this.dataGridViewCustomers.AllowUserToDeleteRows = false;
             this.dataGridViewCustomers.AutoGenerateColumns = false;
             this.dataGridViewCustomers.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -133,6 +135,8 @@
             this.dataGridViewCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCustomers.Location = new System.Drawing.Point(3, 43);
             this.dataGridViewCustomers.Name = "dataGridViewCustomers";
+            this.dataGridViewCustomers.ReadOnly = true;
+            this.dataGridViewCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomers.Size = new System.Drawing.Size(743, 439);
             this.dataGridViewCustomers.TabIndex = 1;
             // 
@@ -145,42 +149,50 @@
             this.iDKlientaDataGridViewTextBoxColumn.DataPropertyName = "IDKlienta";
             this.iDKlientaDataGridViewTextBoxColumn.HeaderText = "IDKlienta";
             this.iDKlientaDataGridViewTextBoxColumn.Name = "iDKlientaDataGridViewTextBoxColumn";
+            this.iDKlientaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // imieDataGridViewTextBoxColumn
             // 
             this.imieDataGridViewTextBoxColumn.DataPropertyName = "Imie";
             this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
             this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
+            this.imieDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nazwiskoDataGridViewTextBoxColumn
             // 
             this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
             this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
             this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
+            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // plecDataGridViewTextBoxColumn
             // 
             this.plecDataGridViewTextBoxColumn.DataPropertyName = "Plec";
             this.plecDataGridViewTextBoxColumn.HeaderText = "Plec";
             this.plecDataGridViewTextBoxColumn.Name = "plecDataGridViewTextBoxColumn";
+            this.plecDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // wiekDataGridViewTextBoxColumn
             // 
             this.wiekDataGridViewTextBoxColumn.DataPropertyName = "Wiek";
             this.wiekDataGridViewTextBoxColumn.HeaderText = "Wiek";
             this.wiekDataGridViewTextBoxColumn.Name = "wiekDataGridViewTextBoxColumn";
+            this.wiekDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // adresDataGridViewTextBoxColumn
             // 
             this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
             this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
             this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
+            this.adresDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonDataGridViewTextBoxColumn
             // 
+            this.telefonDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
             this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
+            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // CustomersForm
             // 

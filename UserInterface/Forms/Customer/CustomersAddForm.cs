@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.Forms.Base;
+using UserInterface.Api;
+using UserInterface.Classes;
 
 namespace UserInterface.Forms.Customer
 {
     public partial class CustomersAddForm : BaseAddEditForm
     {
+
+        public EventHandler ReloadCustomers;
         public CustomersAddForm()
         {
             InitializeComponent();
@@ -120,7 +124,16 @@ namespace UserInterface.Forms.Customer
         {
             if (ValidateForm())
             {
-                MessageBox.Show("Zapisywanie..");
+                Klienci klienci = new Api.Klienci()
+                {
+                    Imie = userControlInputFirstName.TekstInput,
+                    Nazwisko = userControlInputLastName.TekstInput,
+                    Plec = comboBoxGender.Text,
+                    Wiek = string.IsNullOrEmpty(textBoxAge.Text) ? 0 : Convert.ToInt32(textBoxAge.Text),
+                    Adres = textBoxAddress.Text,
+                    Telefon = textBoxPhone.Text,
+                };
+                ReloadCustomers?.Invoke(buttonSave, new CustomersEventArgs(klienci));
                 Close();
             }
             

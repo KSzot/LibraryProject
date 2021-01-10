@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.Forms.Base;
 using UserInterface.Api;
+using UserInterface.Classes;
 
 namespace UserInterface.Forms.Customer
 {
@@ -68,6 +69,35 @@ namespace UserInterface.Forms.Customer
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             CustomersAddForm frm = new CustomersAddForm();
+            frm.ReloadCustomers += (s, ea) =>
+            {
+                CustomersEventArgs eventArgs = ea as CustomersEventArgs;
+                if (eventArgs != null)
+                {
+                    LibraryServiceClient api = new LibraryServiceClient();
+                    api.AddClientToDatabase(eventArgs.Klienci);
+                    Klienci client = api.GetLastClient();
+                    klienciBindingSource.DataSource = api.GetAllClient();
+                    dataGridViewCustomers.ClearSelection();
+                    dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
+                }
+                    
+                
+            };
+
+            //frm.ReloadEmployees += (s, ea) =>
+            //{
+            //    EmployeeEventArgs evetArgs = ea as EmployeeEventArgs;
+            //    if (evetArgs != null)
+            //    {
+            //        EmployeeViewModel employee
+            //            = MappingHelper.MapEmployeeModelToEmployeeViewModel(evetArgs.Employee);
+            //        bsEmployees.Add(employee);
+
+            //        dgvEmployees.ClearSelection();
+            //        dgvEmployees.Rows[dgvEmployees.Rows.Count - 1].Selected = true;
+            //    }
+            //};
             frm.ShowDialog();
         }
     }

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CustomersEventArgs.cs" />
     <Compile Include="Connected Services\Api\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

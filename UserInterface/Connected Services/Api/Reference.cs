@@ -158,11 +158,17 @@ namespace UserInterface.Api {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Api.ILibraryService")]
     public interface ILibraryService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/AddToDatabase", ReplyAction="http://tempuri.org/ILibraryService/AddToDatabaseResponse")]
-        string AddToDatabase(string firstname, string lastname, string gender);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/AddClientToDatabase", ReplyAction="http://tempuri.org/ILibraryService/AddClientToDatabaseResponse")]
+        string AddClientToDatabase(UserInterface.Api.Klienci client);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/AddToDatabase", ReplyAction="http://tempuri.org/ILibraryService/AddToDatabaseResponse")]
-        System.Threading.Tasks.Task<string> AddToDatabaseAsync(string firstname, string lastname, string gender);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/AddClientToDatabase", ReplyAction="http://tempuri.org/ILibraryService/AddClientToDatabaseResponse")]
+        System.Threading.Tasks.Task<string> AddClientToDatabaseAsync(UserInterface.Api.Klienci client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetLastClient", ReplyAction="http://tempuri.org/ILibraryService/GetLastClientResponse")]
+        UserInterface.Api.Klienci GetLastClient();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetLastClient", ReplyAction="http://tempuri.org/ILibraryService/GetLastClientResponse")]
+        System.Threading.Tasks.Task<UserInterface.Api.Klienci> GetLastClientAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllClient", ReplyAction="http://tempuri.org/ILibraryService/GetAllClientResponse")]
         UserInterface.Api.Klienci[] GetAllClient();
@@ -198,12 +204,20 @@ namespace UserInterface.Api {
                 base(binding, remoteAddress) {
         }
         
-        public string AddToDatabase(string firstname, string lastname, string gender) {
-            return base.Channel.AddToDatabase(firstname, lastname, gender);
+        public string AddClientToDatabase(UserInterface.Api.Klienci client) {
+            return base.Channel.AddClientToDatabase(client);
         }
         
-        public System.Threading.Tasks.Task<string> AddToDatabaseAsync(string firstname, string lastname, string gender) {
-            return base.Channel.AddToDatabaseAsync(firstname, lastname, gender);
+        public System.Threading.Tasks.Task<string> AddClientToDatabaseAsync(UserInterface.Api.Klienci client) {
+            return base.Channel.AddClientToDatabaseAsync(client);
+        }
+        
+        public UserInterface.Api.Klienci GetLastClient() {
+            return base.Channel.GetLastClient();
+        }
+        
+        public System.Threading.Tasks.Task<UserInterface.Api.Klienci> GetLastClientAsync() {
+            return base.Channel.GetLastClientAsync();
         }
         
         public UserInterface.Api.Klienci[] GetAllClient() {

@@ -7,11 +7,17 @@
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/LibraryApi/Service1/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LibraryApi" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ILibraryService_AddToDatabase_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddToDatabase" />
+  <wsdl:message name="ILibraryService_AddClientToDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddClientToDatabase" />
   </wsdl:message>
-  <wsdl:message name="ILibraryService_AddToDatabase_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddToDatabaseResponse" />
+  <wsdl:message name="ILibraryService_AddClientToDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddClientToDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLastClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastClient" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLastClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastClientResponse" />
   </wsdl:message>
   <wsdl:message name="ILibraryService_GetAllClient_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllClient" />
@@ -20,9 +26,13 @@
     <wsdl:part name="parameters" element="tns:GetAllClientResponse" />
   </wsdl:message>
   <wsdl:portType name="ILibraryService">
-    <wsdl:operation name="AddToDatabase">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/AddToDatabase" message="tns:ILibraryService_AddToDatabase_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/AddToDatabaseResponse" message="tns:ILibraryService_AddToDatabase_OutputMessage" />
+    <wsdl:operation name="AddClientToDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/AddClientToDatabase" message="tns:ILibraryService_AddClientToDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/AddClientToDatabaseResponse" message="tns:ILibraryService_AddClientToDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLastClient" message="tns:ILibraryService_GetLastClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLastClientResponse" message="tns:ILibraryService_GetLastClient_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllClient">
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetAllClient" message="tns:ILibraryService_GetAllClient_InputMessage" />
@@ -31,8 +41,17 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILibraryService" type="tns:ILibraryService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="AddToDatabase">
-      <soap:operation soapAction="http://tempuri.org/ILibraryService/AddToDatabase" style="document" />
+    <wsdl:operation name="AddClientToDatabase">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/AddClientToDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastClient">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLastClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

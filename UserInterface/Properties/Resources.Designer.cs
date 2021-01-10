@@ -63,6 +63,16 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel_32 {
+            get {
+                object obj = ResourceManager.GetObject("cancel_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_16 {
             get {
                 object obj = ResourceManager.GetObject("close_16", resourceCulture);
@@ -136,6 +146,16 @@ namespace UserInterface.Properties {
         internal static System.Drawing.Bitmap open_book64 {
             get {
                 object obj = ResourceManager.GetObject("open_book64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_32 {
+            get {
+                object obj = ResourceManager.GetObject("save_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

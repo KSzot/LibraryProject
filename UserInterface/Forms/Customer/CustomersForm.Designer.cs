@@ -107,6 +107,7 @@
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "Klienci";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // dataGridViewCustomers
             // 
@@ -126,6 +127,7 @@
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Name = "CustomersForm";
             this.Text = "Klienci";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomersForm_FormClosed);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).EndInit();

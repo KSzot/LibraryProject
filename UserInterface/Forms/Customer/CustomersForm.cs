@@ -56,5 +56,11 @@ namespace UserInterface.Forms.Customer
             _instance = null;
         }
         #endregion
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            CustomersAddForm frm = new CustomersAddForm();
+            frm.ShowDialog();
+        }
     }
 }

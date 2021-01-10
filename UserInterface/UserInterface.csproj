@@ -49,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Base\BaseAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Base\BaseAddEditForm.Designer.cs">
+      <DependentUpon>BaseAddEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Base\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomersAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomersAddForm.Designer.cs">
+      <DependentUpon>CustomersAddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Customer\CustomersForm.cs">
       <SubType>Form</SubType>
@@ -69,8 +81,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Base\BaseAddEditForm.resx">
+      <DependentUpon>BaseAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Base\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\CustomersAddForm.resx">
+      <DependentUpon>CustomersAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Customer\CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
@@ -101,7 +119,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\cancel_32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_16.png" />
   </ItemGroup>
@@ -125,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\open-book64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

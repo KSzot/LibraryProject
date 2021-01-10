@@ -13,3 +13,5 @@ F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\Biblio
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\BibliotekaKontrolki.pdb
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customer.CustomersForm.resources
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.csproj.CopyComplete
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Base.BaseAddEditForm.resources
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customer.CustomersAddForm.resources

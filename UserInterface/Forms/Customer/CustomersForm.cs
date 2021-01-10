@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.Forms.Base;
+using UserInterface.Api;
 
 namespace UserInterface.Forms.Customer
 {
@@ -47,6 +48,13 @@ namespace UserInterface.Forms.Customer
         private CustomersForm()
         {
             InitializeComponent();
+            InitializeData();
+        }
+
+        private void InitializeData()
+        {
+            LibraryServiceClient libraryService = new LibraryServiceClient();
+            klienciBindingSource.DataSource = libraryService.GetAllClient();
         }
 
 

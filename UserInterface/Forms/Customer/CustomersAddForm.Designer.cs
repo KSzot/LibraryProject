@@ -228,6 +228,7 @@
             this.buttonCancel.Text = "Anuluj";
             this.buttonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // errorProviderGender
             // 

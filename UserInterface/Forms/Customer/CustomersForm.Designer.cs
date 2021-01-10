@@ -35,11 +35,18 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridViewCustomers = new System.Windows.Forms.DataGridView();
-            this.bindingSourceCustomers = new System.Windows.Forms.BindingSource(this.components);
+            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.plecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wiekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -54,7 +61,7 @@
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(800, 485);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(749, 485);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // panelTop
@@ -66,7 +73,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTop.Location = new System.Drawing.Point(3, 3);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(794, 34);
+            this.panelTop.Size = new System.Drawing.Size(743, 34);
             this.panelTop.TabIndex = 0;
             // 
             // buttonDelete
@@ -111,19 +118,75 @@
             // 
             // dataGridViewCustomers
             // 
+            this.dataGridViewCustomers.AutoGenerateColumns = false;
             this.dataGridViewCustomers.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDKlientaDataGridViewTextBoxColumn,
+            this.imieDataGridViewTextBoxColumn,
+            this.nazwiskoDataGridViewTextBoxColumn,
+            this.plecDataGridViewTextBoxColumn,
+            this.wiekDataGridViewTextBoxColumn,
+            this.adresDataGridViewTextBoxColumn,
+            this.telefonDataGridViewTextBoxColumn});
+            this.dataGridViewCustomers.DataSource = this.klienciBindingSource;
             this.dataGridViewCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCustomers.Location = new System.Drawing.Point(3, 43);
             this.dataGridViewCustomers.Name = "dataGridViewCustomers";
-            this.dataGridViewCustomers.Size = new System.Drawing.Size(794, 439);
+            this.dataGridViewCustomers.Size = new System.Drawing.Size(743, 439);
             this.dataGridViewCustomers.TabIndex = 1;
+            // 
+            // klienciBindingSource
+            // 
+            this.klienciBindingSource.DataSource = typeof(UserInterface.Api.Klienci);
+            // 
+            // iDKlientaDataGridViewTextBoxColumn
+            // 
+            this.iDKlientaDataGridViewTextBoxColumn.DataPropertyName = "IDKlienta";
+            this.iDKlientaDataGridViewTextBoxColumn.HeaderText = "IDKlienta";
+            this.iDKlientaDataGridViewTextBoxColumn.Name = "iDKlientaDataGridViewTextBoxColumn";
+            // 
+            // imieDataGridViewTextBoxColumn
+            // 
+            this.imieDataGridViewTextBoxColumn.DataPropertyName = "Imie";
+            this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
+            this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
+            // 
+            // nazwiskoDataGridViewTextBoxColumn
+            // 
+            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
+            // 
+            // plecDataGridViewTextBoxColumn
+            // 
+            this.plecDataGridViewTextBoxColumn.DataPropertyName = "Plec";
+            this.plecDataGridViewTextBoxColumn.HeaderText = "Plec";
+            this.plecDataGridViewTextBoxColumn.Name = "plecDataGridViewTextBoxColumn";
+            // 
+            // wiekDataGridViewTextBoxColumn
+            // 
+            this.wiekDataGridViewTextBoxColumn.DataPropertyName = "Wiek";
+            this.wiekDataGridViewTextBoxColumn.HeaderText = "Wiek";
+            this.wiekDataGridViewTextBoxColumn.Name = "wiekDataGridViewTextBoxColumn";
+            // 
+            // adresDataGridViewTextBoxColumn
+            // 
+            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
+            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
+            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
+            // 
+            // telefonDataGridViewTextBoxColumn
+            // 
+            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(749, 485);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Name = "CustomersForm";
             this.Text = "Klienci";
@@ -131,7 +194,7 @@
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,10 +203,17 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.DataGridView dataGridViewCustomers;
-        private System.Windows.Forms.BindingSource bindingSourceCustomers;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.BindingSource klienciBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDKlientaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn plecDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wiekDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
     }
 }

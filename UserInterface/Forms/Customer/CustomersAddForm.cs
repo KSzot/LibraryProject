@@ -126,6 +126,13 @@ namespace UserInterface.Forms.Customer
             
         }
 
+
+        protected override void Cancel()
+        {
+            Close();
+        }
+
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             Save();
@@ -134,6 +141,11 @@ namespace UserInterface.Forms.Customer
         private void comboBoxGender_TextChanged(object sender, EventArgs e)
         {
             ValidateControl();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Cancel();
         }
     }
 }

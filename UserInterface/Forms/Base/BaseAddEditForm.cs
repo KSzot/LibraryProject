@@ -40,4 +40,3 @@ namespace UserInterface.Forms.Base
         protected virtual void Cancel() { }
     }
 }
-}

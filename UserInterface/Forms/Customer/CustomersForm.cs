@@ -17,6 +17,7 @@ namespace UserInterface.Forms.Customer
     {
         #region Fields
         private static CustomersForm _instance = null;
+        private static IList<Klienci> clients;
         #endregion
 
         #region Properties
@@ -56,8 +57,8 @@ namespace UserInterface.Forms.Customer
         {
             LibraryServiceClient libraryService = new LibraryServiceClient();
             //klienciBindingSource.DataSource = libraryService.GetAllClient();
-            IList<Klienci> kliencis = libraryService.GetAllClient();
-            foreach (var item in kliencis)
+            clients = libraryService.GetAllClient();
+            foreach (var item in clients)
             {
                 klienciBindingSource.Add(item);
             }
@@ -84,9 +85,10 @@ namespace UserInterface.Forms.Customer
                 {
                     LibraryServiceClient api = new LibraryServiceClient();
                     api.AddClientToDatabase(eventArgs.Klienci);
-                    //Klienci client = api.GetLastClient();
+                    Klienci client = api.GetLastClient();
                     //klienciBindingSource.DataSource = api.GetAllClient();
-                    klienciBindingSource.Add(api.GetLastClient());
+                    clients.Add(client);
+                    klienciBindingSource.Add(client);
                     dataGridViewCustomers.ClearSelection();
                     dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
                 }
@@ -94,6 +96,33 @@ namespace UserInterface.Forms.Customer
                 
             };
             frm.ShowDialog();
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            int clientId = Convert.ToInt32(dataGridViewCustomers.CurrentRow.Cells[0].Value);
+            int selectedRowIndex = dataGridViewCustomers.CurrentRow.Index;
+            CustomersEditForm frm = new CustomersEditForm(findClientAfterId(clientId));
+            frm.ReloadCustomers += (s, ea) =>
+             {
+                 CustomersEventArgs eventArgs = ea as CustomersEventArgs;
+                 if(eventArgs!=null)
+                 {
+                     klienciBindingSource[selectedRowIndex] = eventArgs.Klienci;
+                 }
+             };
+
+            frm.ShowDialog();
+        }
+
+        private Klienci findClientAfterId(int index)
+        {
+            Klienci client = new Klienci();
+            foreach (Klienci item in clients)
+            {
+                if (item.IDKlienta == index)client = item;
+            }
+            return client;
         }
     }
 }

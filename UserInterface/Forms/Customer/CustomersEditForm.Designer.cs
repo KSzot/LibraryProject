@@ -1,6 +1,6 @@
 ﻿namespace UserInterface.Forms.Customer
 {
-    partial class CustomersAddForm
+    partial class CustomersEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.pictureBoxTitle = new System.Windows.Forms.PictureBox();
             this.groupBoxGeneral = new System.Windows.Forms.GroupBox();
             this.userControlInputLastName = new BibliotekaKontrolki.UserControlInput();
             this.userControlInputFirstName = new BibliotekaKontrolki.UserControlInput();
@@ -44,25 +45,31 @@
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.pictureBoxTitle = new System.Windows.Forms.PictureBox();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.errorProviderGender = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).BeginInit();
             this.groupBoxGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGender)).BeginInit();
             this.groupBoxContact.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGender)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(12, 18);
+            this.labelTitle.Location = new System.Drawing.Point(22, 28);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(77, 33);
-            this.labelTitle.TabIndex = 0;
+            this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Klient";
+            // 
+            // pictureBoxTitle
+            // 
+            this.pictureBoxTitle.Image = global::UserInterface.Properties.Resources.man64;
+            this.pictureBoxTitle.Location = new System.Drawing.Point(681, 28);
+            this.pictureBoxTitle.Name = "pictureBoxTitle";
+            this.pictureBoxTitle.Size = new System.Drawing.Size(61, 75);
+            this.pictureBoxTitle.TabIndex = 2;
+            this.pictureBoxTitle.TabStop = false;
             // 
             // groupBoxGeneral
             // 
@@ -72,10 +79,10 @@
             this.groupBoxGeneral.Controls.Add(this.labelAge);
             this.groupBoxGeneral.Controls.Add(this.comboBoxGender);
             this.groupBoxGeneral.Controls.Add(this.labelGender);
-            this.groupBoxGeneral.Location = new System.Drawing.Point(12, 116);
+            this.groupBoxGeneral.Location = new System.Drawing.Point(28, 102);
             this.groupBoxGeneral.Name = "groupBoxGeneral";
             this.groupBoxGeneral.Size = new System.Drawing.Size(504, 205);
-            this.groupBoxGeneral.TabIndex = 2;
+            this.groupBoxGeneral.TabIndex = 3;
             this.groupBoxGeneral.TabStop = false;
             this.groupBoxGeneral.Text = "Ogólne";
             // 
@@ -130,7 +137,6 @@
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(145, 22);
             this.comboBoxGender.TabIndex = 3;
-            this.comboBoxGender.TextChanged += new System.EventHandler(this.comboBoxGender_TextChanged);
             // 
             // labelGender
             // 
@@ -148,10 +154,10 @@
             this.groupBoxContact.Controls.Add(this.labelPhone);
             this.groupBoxContact.Controls.Add(this.textBoxAddress);
             this.groupBoxContact.Controls.Add(this.labelAddress);
-            this.groupBoxContact.Location = new System.Drawing.Point(12, 338);
+            this.groupBoxContact.Location = new System.Drawing.Point(28, 338);
             this.groupBoxContact.Name = "groupBoxContact";
             this.groupBoxContact.Size = new System.Drawing.Size(332, 100);
-            this.groupBoxContact.TabIndex = 3;
+            this.groupBoxContact.TabIndex = 8;
             this.groupBoxContact.TabStop = false;
             this.groupBoxContact.Text = "Kontakt";
             // 
@@ -196,23 +202,14 @@
             this.buttonSave.ForeColor = System.Drawing.Color.Black;
             this.buttonSave.Image = global::UserInterface.Properties.Resources.save_32;
             this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSave.Location = new System.Drawing.Point(415, 369);
+            this.buttonSave.Location = new System.Drawing.Point(431, 355);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(101, 45);
-            this.buttonSave.TabIndex = 4;
+            this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Zapisz";
             this.buttonSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // pictureBoxTitle
-            // 
-            this.pictureBoxTitle.Image = global::UserInterface.Properties.Resources.man64;
-            this.pictureBoxTitle.Location = new System.Drawing.Point(667, 18);
-            this.pictureBoxTitle.Name = "pictureBoxTitle";
-            this.pictureBoxTitle.Size = new System.Drawing.Size(61, 75);
-            this.pictureBoxTitle.TabIndex = 1;
-            this.pictureBoxTitle.TabStop = false;
             // 
             // buttonCancel
             // 
@@ -221,20 +218,16 @@
             this.buttonCancel.ForeColor = System.Drawing.Color.Black;
             this.buttonCancel.Image = global::UserInterface.Properties.Resources.cancel_32;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(563, 369);
+            this.buttonCancel.Location = new System.Drawing.Point(596, 355);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(101, 45);
-            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.TabIndex = 10;
             this.buttonCancel.Text = "Anuluj";
             this.buttonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // errorProviderGender
-            // 
-            this.errorProviderGender.ContainerControl = this;
-            // 
-            // CustomersAddForm
+            // CustomersEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,15 +238,14 @@
             this.Controls.Add(this.groupBoxGeneral);
             this.Controls.Add(this.pictureBoxTitle);
             this.Controls.Add(this.labelTitle);
-            this.Name = "CustomersAddForm";
-            this.Text = "CustomersAddForm";
+            this.Name = "CustomersEditForm";
+            this.Text = "Modyfikuj klienta";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).EndInit();
             this.groupBoxGeneral.ResumeLayout(false);
             this.groupBoxGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGender)).EndInit();
             this.groupBoxContact.ResumeLayout(false);
             this.groupBoxContact.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGender)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,10 +256,12 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.PictureBox pictureBoxTitle;
         private System.Windows.Forms.GroupBox groupBoxGeneral;
-        private System.Windows.Forms.Label labelGender;
+        private BibliotekaKontrolki.UserControlInput userControlInputLastName;
+        private BibliotekaKontrolki.UserControlInput userControlInputFirstName;
         private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.Label labelAge;
         private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.GroupBox groupBoxContact;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label labelPhone;
@@ -276,8 +270,5 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.BindingSource bindingSourceGender;
-        private System.Windows.Forms.ErrorProvider errorProviderGender;
-        private BibliotekaKontrolki.UserControlInput userControlInputLastName;
-        private BibliotekaKontrolki.UserControlInput userControlInputFirstName;
     }
 }

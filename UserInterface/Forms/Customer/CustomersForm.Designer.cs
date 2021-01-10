@@ -35,7 +35,6 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridViewCustomers = new System.Windows.Forms.DataGridView();
-            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.wiekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).BeginInit();
@@ -101,6 +101,7 @@
             this.buttonModify.TabIndex = 3;
             this.buttonModify.Text = "Modyfikuj";
             this.buttonModify.UseVisualStyleBackColor = false;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonAdd
             // 
@@ -139,10 +140,6 @@
             this.dataGridViewCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomers.Size = new System.Drawing.Size(743, 439);
             this.dataGridViewCustomers.TabIndex = 1;
-            // 
-            // klienciBindingSource
-            // 
-            this.klienciBindingSource.DataSource = typeof(UserInterface.Api.Klienci);
             // 
             // iDKlientaDataGridViewTextBoxColumn
             // 
@@ -193,6 +190,10 @@
             this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // klienciBindingSource
+            // 
+            this.klienciBindingSource.DataSource = typeof(UserInterface.Api.Klienci);
             // 
             // CustomersForm
             // 

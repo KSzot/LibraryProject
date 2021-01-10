@@ -30,9 +30,9 @@
         {
             this.tabControlTop = new System.Windows.Forms.TabControl();
             this.tabPageGeneral = new System.Windows.Forms.TabPage();
-            this.buttonHuman = new System.Windows.Forms.Button();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.buttonBook = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.buttonHuman = new System.Windows.Forms.Button();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelUser = new System.Windows.Forms.ToolStripStatusLabel();
@@ -66,29 +66,6 @@
             this.tabPageGeneral.Text = "Ogólne";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
             // 
-            // buttonHuman
-            // 
-            this.buttonHuman.BackColor = System.Drawing.Color.White;
-            this.buttonHuman.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonHuman.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHuman.Image = global::UserInterface.Properties.Resources.man32;
-            this.buttonHuman.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHuman.Location = new System.Drawing.Point(3, 3);
-            this.buttonHuman.Name = "buttonHuman";
-            this.buttonHuman.Size = new System.Drawing.Size(112, 44);
-            this.buttonHuman.TabIndex = 1;
-            this.buttonHuman.Text = "Klienci";
-            this.buttonHuman.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonHuman.UseVisualStyleBackColor = false;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(115, 3);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 44);
-            this.splitter1.TabIndex = 2;
-            this.splitter1.TabStop = false;
-            // 
             // buttonBook
             // 
             this.buttonBook.BackColor = System.Drawing.Color.White;
@@ -103,6 +80,30 @@
             this.buttonBook.Text = "Zbiory";
             this.buttonBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBook.UseVisualStyleBackColor = false;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(115, 3);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 44);
+            this.splitter1.TabIndex = 2;
+            this.splitter1.TabStop = false;
+            // 
+            // buttonHuman
+            // 
+            this.buttonHuman.BackColor = System.Drawing.Color.White;
+            this.buttonHuman.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonHuman.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHuman.Image = global::UserInterface.Properties.Resources.man32;
+            this.buttonHuman.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHuman.Location = new System.Drawing.Point(3, 3);
+            this.buttonHuman.Name = "buttonHuman";
+            this.buttonHuman.Size = new System.Drawing.Size(112, 44);
+            this.buttonHuman.TabIndex = 1;
+            this.buttonHuman.Text = "Klienci";
+            this.buttonHuman.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonHuman.UseVisualStyleBackColor = false;
+            this.buttonHuman.Click += new System.EventHandler(this.buttonHuman_Click);
             // 
             // statusStripMain
             // 
@@ -140,6 +141,8 @@
             this.tabControlMain.Size = new System.Drawing.Size(834, 452);
             this.tabControlMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlMain.TabIndex = 2;
+            this.tabControlMain.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlMain_DrawItem);
+            this.tabControlMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControlMain_MouseDown);
             // 
             // MainForm
             // 

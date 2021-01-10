@@ -9,3 +9,7 @@ F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserIn
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.exe
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.pdb
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.MainForm.resources
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\BibliotekaKontrolki.dll
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\bin\Debug\BibliotekaKontrolki.pdb
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customer.CustomersForm.resources
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.csproj.CopyComplete

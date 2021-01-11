@@ -170,6 +170,12 @@ namespace UserInterface.Api {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetLastClient", ReplyAction="http://tempuri.org/ILibraryService/GetLastClientResponse")]
         System.Threading.Tasks.Task<UserInterface.Api.Klienci> GetLastClientAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/ModifyClient", ReplyAction="http://tempuri.org/ILibraryService/ModifyClientResponse")]
+        void ModifyClient(UserInterface.Api.Klienci client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/ModifyClient", ReplyAction="http://tempuri.org/ILibraryService/ModifyClientResponse")]
+        System.Threading.Tasks.Task ModifyClientAsync(UserInterface.Api.Klienci client);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllClient", ReplyAction="http://tempuri.org/ILibraryService/GetAllClientResponse")]
         UserInterface.Api.Klienci[] GetAllClient();
         
@@ -218,6 +224,14 @@ namespace UserInterface.Api {
         
         public System.Threading.Tasks.Task<UserInterface.Api.Klienci> GetLastClientAsync() {
             return base.Channel.GetLastClientAsync();
+        }
+        
+        public void ModifyClient(UserInterface.Api.Klienci client) {
+            base.Channel.ModifyClient(client);
+        }
+        
+        public System.Threading.Tasks.Task ModifyClientAsync(UserInterface.Api.Klienci client) {
+            return base.Channel.ModifyClientAsync(client);
         }
         
         public UserInterface.Api.Klienci[] GetAllClient() {

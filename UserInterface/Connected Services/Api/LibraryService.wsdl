@@ -19,6 +19,12 @@
   <wsdl:message name="ILibraryService_GetLastClient_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLastClientResponse" />
   </wsdl:message>
+  <wsdl:message name="ILibraryService_ModifyClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyClient" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ModifyClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyClientResponse" />
+  </wsdl:message>
   <wsdl:message name="ILibraryService_GetAllClient_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllClient" />
   </wsdl:message>
@@ -33,6 +39,10 @@
     <wsdl:operation name="GetLastClient">
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLastClient" message="tns:ILibraryService_GetLastClient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLastClientResponse" message="tns:ILibraryService_GetLastClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ModifyClient" message="tns:ILibraryService_ModifyClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ModifyClientResponse" message="tns:ILibraryService_ModifyClient_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllClient">
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetAllClient" message="tns:ILibraryService_GetAllClient_InputMessage" />
@@ -52,6 +62,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetLastClient">
       <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLastClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyClient">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ModifyClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -109,6 +109,20 @@ namespace UserInterface.Forms.Customer
                  if(eventArgs!=null)
                  {
                      klienciBindingSource[selectedRowIndex] = eventArgs.Klienci;
+                     LibraryServiceClient api = new LibraryServiceClient();
+                     api.ModifyClient(eventArgs.Klienci);
+                     foreach (Klienci person in clients)
+                     {
+                         if(person.IDKlienta == eventArgs.Klienci.IDKlienta)
+                         {
+                             person.Imie = eventArgs.Klienci.Imie;
+                             person.Nazwisko = eventArgs.Klienci.Nazwisko;
+                             person.Plec = eventArgs.Klienci.Plec;
+                             person.Wiek = eventArgs.Klienci.Wiek;
+                             person.Adres = eventArgs.Klienci.Adres;
+                             person.Telefon = eventArgs.Klienci.Telefon;
+                         }
+                     }
                  }
              };
 

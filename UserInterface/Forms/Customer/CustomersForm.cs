@@ -17,7 +17,7 @@ namespace UserInterface.Forms.Customer
     {
         #region Fields
         private static CustomersForm _instance = null;
-        private static IList<Klienci> clients;
+
         #endregion
 
         #region Properties
@@ -56,15 +56,14 @@ namespace UserInterface.Forms.Customer
         private void InitializeData()
         {
             LibraryServiceClient libraryService = new LibraryServiceClient();
-            //klienciBindingSource.DataSource = libraryService.GetAllClient();
-            clients = libraryService.GetAllClient();
-            foreach (var item in clients)
+            //Nie wiem dlaczego moja tablica ma fixed size (stały rozmair)
+            IList<Klienci> clients = libraryService.GetAllClient();
+            IList<Klienci> tab = new List<Klienci>();
+            foreach (Klienci item in clients)
             {
-                klienciBindingSource.Add(item);
+                tab.Add(item);
             }
-            //IList<Klienci> kliencis = (IList<Klienci>)(IEnumerable<Klienci>)libraryService.GetAllClient();
-            //klienciBindingSource.DataSource = kliencis.AsEnumerable();
-            //dataGridViewCustomers.DataSource = klienciBindingSource;
+            klienciBindingSource.DataSource = tab;
         }
 
 
@@ -86,9 +85,7 @@ namespace UserInterface.Forms.Customer
                     LibraryServiceClient api = new LibraryServiceClient();
                     api.AddClientToDatabase(eventArgs.Klienci);
                     Klienci client = api.GetLastClient();
-                    //klienciBindingSource.DataSource = api.GetAllClient();
-                    clients.Add(client);
-                    klienciBindingSource.Add(client);
+                    klienciBindingSource.Add(api.GetLastClient());
                     dataGridViewCustomers.ClearSelection();
                     dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
                 }
@@ -111,18 +108,18 @@ namespace UserInterface.Forms.Customer
                      klienciBindingSource[selectedRowIndex] = eventArgs.Klienci;
                      LibraryServiceClient api = new LibraryServiceClient();
                      api.ModifyClient(eventArgs.Klienci);
-                     foreach (Klienci person in clients)
-                     {
-                         if(person.IDKlienta == eventArgs.Klienci.IDKlienta)
-                         {
-                             person.Imie = eventArgs.Klienci.Imie;
-                             person.Nazwisko = eventArgs.Klienci.Nazwisko;
-                             person.Plec = eventArgs.Klienci.Plec;
-                             person.Wiek = eventArgs.Klienci.Wiek;
-                             person.Adres = eventArgs.Klienci.Adres;
-                             person.Telefon = eventArgs.Klienci.Telefon;
-                         }
-                     }
+                     //foreach (Klienci person in clients)
+                     //{
+                     //    if(person.IDKlienta == eventArgs.Klienci.IDKlienta)
+                     //    {
+                     //        person.Imie = eventArgs.Klienci.Imie;
+                     //        person.Nazwisko = eventArgs.Klienci.Nazwisko;
+                     //        person.Plec = eventArgs.Klienci.Plec;
+                     //        person.Wiek = eventArgs.Klienci.Wiek;
+                     //        person.Adres = eventArgs.Klienci.Adres;
+                     //        person.Telefon = eventArgs.Klienci.Telefon;
+                     //    }
+                     //}
                  }
              };
 
@@ -131,12 +128,29 @@ namespace UserInterface.Forms.Customer
 
         private Klienci findClientAfterId(int index)
         {
-            Klienci client = new Klienci();
-            foreach (Klienci item in clients)
+            LibraryServiceClient api = new LibraryServiceClient();
+            return api.FetchClientAfterID(index);
+        }
+
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            int clientId = Convert.ToInt32(dataGridViewCustomers.CurrentRow.Cells[0].Value);
+
+            Klienci person = findClientAfterId(clientId);
+            if(person != null)
             {
-                if (item.IDKlienta == index)client = item;
+                klienciBindingSource.Remove(person);
+
+                LibraryServiceClient api = new LibraryServiceClient();
+                api.DeleteClientAfterID(clientId);
+                if (dataGridViewCustomers.Rows.Count > 1)
+                {
+                    dataGridViewCustomers.ClearSelection();
+                    dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
+                }
             }
-            return client;
+
         }
     }
 }

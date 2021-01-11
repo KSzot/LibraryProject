@@ -19,11 +19,23 @@
   <wsdl:message name="ILibraryService_GetLastClient_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLastClientResponse" />
   </wsdl:message>
+  <wsdl:message name="ILibraryService_FetchClientAfterID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchClientAfterID" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_FetchClientAfterID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchClientAfterIDResponse" />
+  </wsdl:message>
   <wsdl:message name="ILibraryService_ModifyClient_InputMessage">
     <wsdl:part name="parameters" element="tns:ModifyClient" />
   </wsdl:message>
   <wsdl:message name="ILibraryService_ModifyClient_OutputMessage">
     <wsdl:part name="parameters" element="tns:ModifyClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteClientAfterID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClientAfterID" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_DeleteClientAfterID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClientAfterIDResponse" />
   </wsdl:message>
   <wsdl:message name="ILibraryService_GetAllClient_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllClient" />
@@ -40,9 +52,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLastClient" message="tns:ILibraryService_GetLastClient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLastClientResponse" message="tns:ILibraryService_GetLastClient_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="FetchClientAfterID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/FetchClientAfterID" message="tns:ILibraryService_FetchClientAfterID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/FetchClientAfterIDResponse" message="tns:ILibraryService_FetchClientAfterID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ModifyClient">
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ModifyClient" message="tns:ILibraryService_ModifyClient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ModifyClientResponse" message="tns:ILibraryService_ModifyClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClientAfterID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/DeleteClientAfterID" message="tns:ILibraryService_DeleteClientAfterID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/DeleteClientAfterIDResponse" message="tns:ILibraryService_DeleteClientAfterID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllClient">
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetAllClient" message="tns:ILibraryService_GetAllClient_InputMessage" />
@@ -69,8 +89,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FetchClientAfterID">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/FetchClientAfterID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ModifyClient">
       <soap:operation soapAction="http://tempuri.org/ILibraryService/ModifyClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClientAfterID">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/DeleteClientAfterID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

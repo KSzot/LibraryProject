@@ -170,11 +170,23 @@ namespace UserInterface.Api {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetLastClient", ReplyAction="http://tempuri.org/ILibraryService/GetLastClientResponse")]
         System.Threading.Tasks.Task<UserInterface.Api.Klienci> GetLastClientAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/FetchClientAfterID", ReplyAction="http://tempuri.org/ILibraryService/FetchClientAfterIDResponse")]
+        UserInterface.Api.Klienci FetchClientAfterID(int index);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/FetchClientAfterID", ReplyAction="http://tempuri.org/ILibraryService/FetchClientAfterIDResponse")]
+        System.Threading.Tasks.Task<UserInterface.Api.Klienci> FetchClientAfterIDAsync(int index);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/ModifyClient", ReplyAction="http://tempuri.org/ILibraryService/ModifyClientResponse")]
         void ModifyClient(UserInterface.Api.Klienci client);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/ModifyClient", ReplyAction="http://tempuri.org/ILibraryService/ModifyClientResponse")]
         System.Threading.Tasks.Task ModifyClientAsync(UserInterface.Api.Klienci client);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/DeleteClientAfterID", ReplyAction="http://tempuri.org/ILibraryService/DeleteClientAfterIDResponse")]
+        void DeleteClientAfterID(int index);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/DeleteClientAfterID", ReplyAction="http://tempuri.org/ILibraryService/DeleteClientAfterIDResponse")]
+        System.Threading.Tasks.Task DeleteClientAfterIDAsync(int index);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllClient", ReplyAction="http://tempuri.org/ILibraryService/GetAllClientResponse")]
         UserInterface.Api.Klienci[] GetAllClient();
@@ -226,12 +238,28 @@ namespace UserInterface.Api {
             return base.Channel.GetLastClientAsync();
         }
         
+        public UserInterface.Api.Klienci FetchClientAfterID(int index) {
+            return base.Channel.FetchClientAfterID(index);
+        }
+        
+        public System.Threading.Tasks.Task<UserInterface.Api.Klienci> FetchClientAfterIDAsync(int index) {
+            return base.Channel.FetchClientAfterIDAsync(index);
+        }
+        
         public void ModifyClient(UserInterface.Api.Klienci client) {
             base.Channel.ModifyClient(client);
         }
         
         public System.Threading.Tasks.Task ModifyClientAsync(UserInterface.Api.Klienci client) {
             return base.Channel.ModifyClientAsync(client);
+        }
+        
+        public void DeleteClientAfterID(int index) {
+            base.Channel.DeleteClientAfterID(index);
+        }
+        
+        public System.Threading.Tasks.Task DeleteClientAfterIDAsync(int index) {
+            return base.Channel.DeleteClientAfterIDAsync(index);
         }
         
         public UserInterface.Api.Klienci[] GetAllClient() {

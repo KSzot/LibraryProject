@@ -150,5 +150,14 @@ namespace UserInterface.Forms.Customer
             }
 
         }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            var customersList = (List<Klienci>)klienciBindingSource.DataSource;
+            var searchText = textBoxSearch.Text;
+            var firstMatchIndex = customersList.FindIndex(c => c.Nazwisko.Contains(searchText));
+            if (firstMatchIndex >= 0)
+                klienciBindingSource.Position = firstMatchIndex;
+        }
     }
 }

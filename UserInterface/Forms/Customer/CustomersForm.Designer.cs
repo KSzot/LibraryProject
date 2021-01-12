@@ -43,6 +43,8 @@
             this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).BeginInit();
@@ -67,6 +69,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.White;
+            this.panelTop.Controls.Add(this.textBoxSearch);
             this.panelTop.Controls.Add(this.buttonDelete);
             this.panelTop.Controls.Add(this.buttonModify);
             this.panelTop.Controls.Add(this.buttonAdd);
@@ -196,6 +199,18 @@
             // 
             this.klienciBindingSource.DataSource = typeof(UserInterface.Api.Klienci);
             // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBoxSearch.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(599, 0);
+            this.textBoxSearch.Multiline = true;
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(144, 34);
+            this.textBoxSearch.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.textBoxSearch, "Wyszukaj klienta po nazwisku");
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -207,6 +222,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CustomersForm_FormClosed);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -229,5 +245,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wiekDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -138,7 +138,7 @@ namespace UserInterface.Forms.Customer
 
         protected override void Cancel()
         {
-            Cancel();
+            Close();
         }
         #endregion
 

@@ -1,0 +1,65 @@
+[33mcommit 1d2e1674859c47187c48f41513f8e152ccb87bd3[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m)[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Mon Jan 11 12:32:00 2021 +0100
+
+    Add button delete, fixed list size
+
+[33mcommit c0004fb21669e9eecde87853be957060d41faa39[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Mon Jan 11 11:20:45 2021 +0100
+
+    CustomersEditForm add entity database
+
+[33mcommit b6013bb5d8852e603b920ea0d61bc1112e83e784[m[33m ([m[1;31morigin/develop[m[33m)[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 23:33:04 2021 +0100
+
+    CustomersEditForm done without Entity update
+
+[33mcommit 6c0059e6dc6ffc94a4f405ea4468fa393ca21d92[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 21:46:33 2021 +0100
+
+    CustomersAddForm done
+
+[33mcommit d4e75d8bbb8b0f4295aa774a2dbf23ae3a51bec9[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 18:09:32 2021 +0100
+
+    CustomerAddform with database
+
+[33mcommit 726e577ea99eeab216ceb906d1e2bab683d98fa0[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 15:55:52 2021 +0100
+
+    Add Api.getAllCilent to customersform
+
+[33mcommit f3bb35f95947f57374921e4e555392c82c9a88b9[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 15:39:16 2021 +0100
+
+    CustomersAddForm done without database
+
+[33mcommit 6e8140d880228786c1dc90e94445d1564304232d[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 13:45:45 2021 +0100
+
+    Fixed BaseAddEditForm
+
+[33mcommit 4ff63df385e839095c9bdfba53d98a7f8cd9b376[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 13:42:16 2021 +0100
+
+    BaseAddEditForm done
+
+[33mcommit 630d95488184fd925ba6ed5661e7079ea51ddb6f[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Sun Jan 10 13:39:03 2021 +0100
+
+    CustomerForm done
+
+[33mcommit 7a28f08cd98bdd48f93841a2e36f6c7b2572e2f3[m
+Author: Krystian <k.szot@nextrope.com>
+Date:   Wed Jan 6 17:37:44 2021 +0100
+
+    Mainform done

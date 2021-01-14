@@ -54,27 +54,27 @@ namespace UserInterface.Forms.Customer
             InitializeData();
         }
 
+        #region Func
         private void InitializeData()
         {
             LibraryServiceClient libraryService = new LibraryServiceClient();
-            //Nie wiem dlaczego moja tablica ma fixed size (stały rozmair)
-            //IList<Klienci> clients = libraryService.GetAllClient();
-            //IList<Klienci> tab = new List<Klienci>();
-            //foreach (Klienci item in clients)
-            //{
-            //    tab.Add(item);
-            //}
             List<Klienci> temp = libraryService.GetAllClient().ToList();
             klienciBindingSource.DataSource = temp;
         }
 
+        private Klienci findClientAfterId(int index)
+        {
+            LibraryServiceClient api = new LibraryServiceClient();
+            return api.FetchClientAfterID(index);
+        }
+        #endregion
 
         #region Events
         private void CustomersForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _instance = null;
         }
-        #endregion
+
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -94,8 +94,8 @@ namespace UserInterface.Forms.Customer
                     dataGridViewCustomers.ClearSelection();
                     dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
                 }
-                    
-                
+
+
             };
             frm.ShowDialog();
         }
@@ -106,23 +106,17 @@ namespace UserInterface.Forms.Customer
             int selectedRowIndex = dataGridViewCustomers.CurrentRow.Index;
             CustomersEditForm frm = new CustomersEditForm(findClientAfterId(clientId));
             frm.ReloadCustomers += (s, ea) =>
-             {
-                 CustomersEventArgs eventArgs = ea as CustomersEventArgs;
-                 if(eventArgs!=null)
-                 {
-                     klienciBindingSource[selectedRowIndex] = eventArgs.Klienci;
-                     LibraryServiceClient api = new LibraryServiceClient();
-                     api.ModifyClient(eventArgs.Klienci);
-                 }
-             };
+            {
+                CustomersEventArgs eventArgs = ea as CustomersEventArgs;
+                if (eventArgs != null)
+                {
+                    klienciBindingSource[selectedRowIndex] = eventArgs.Klienci;
+                    LibraryServiceClient api = new LibraryServiceClient();
+                    api.ModifyClient(eventArgs.Klienci);
+                }
+            };
 
             frm.ShowDialog();
-        }
-
-        private Klienci findClientAfterId(int index)
-        {
-            LibraryServiceClient api = new LibraryServiceClient();
-            return api.FetchClientAfterID(index);
         }
 
 
@@ -159,5 +153,22 @@ namespace UserInterface.Forms.Customer
             if (firstMatchIndex >= 0)
                 klienciBindingSource.Position = firstMatchIndex;
         }
+
+        private void buttonSend_Click(object sender, EventArgs e)
+        {
+            int clientId = Convert.ToInt32(dataGridViewCustomers.CurrentRow.Cells[0].Value);
+            Klienci person = findClientAfterId(clientId);
+            if (person != null)
+            {
+                CustomerEmailForm frm = new CustomerEmailForm(person.Imie, person.Nazwisko);
+                frm.ShowDialog();
+            }
+        }
+        #endregion
+
+
+ 
+
+
     }
 }

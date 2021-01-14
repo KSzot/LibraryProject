@@ -17,3 +17,4 @@ F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserIn
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customer.CustomersAddForm.resources
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customer.CustomersEditForm.resources
 F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Books.BooksForm.resources
+F:\ProjectWinForm\BibliotekaProject\UserInterface\UserInterface\obj\Debug\UserInterface.Forms.Customer.CustomerEmailForm.resources

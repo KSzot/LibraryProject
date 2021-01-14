@@ -24,6 +24,8 @@ namespace UserInterface.Forms.Customer
             ValidateControl();
         }
 
+
+        #region Func
         private void ValidateControl()
         {
             if (string.IsNullOrWhiteSpace(comboBoxGender.Text))
@@ -57,13 +59,13 @@ namespace UserInterface.Forms.Customer
             string lastNameErrorMessage = userControlInputLastName.GetError();
             if (!string.IsNullOrEmpty(lastNameErrorMessage))
             {
-                sbErrorMessage.Append(lastNameErrorMessage+"\n");
+                sbErrorMessage.Append(lastNameErrorMessage + "\n");
             }
 
             string firstNameErrorMessage = userControlInputFirstName.GetError();
             if (!string.IsNullOrEmpty(firstNameErrorMessage))
             {
-                sbErrorMessage.Append(firstNameErrorMessage+"\n");
+                sbErrorMessage.Append(firstNameErrorMessage + "\n");
             }
 
             string genderErrorMessage = errorProviderGender.GetError(comboBoxGender);
@@ -119,7 +121,9 @@ namespace UserInterface.Forms.Customer
 
             return true;
         }
+        #endregion
 
+        #region override
         protected override void Save()
         {
             if (ValidateForm())
@@ -136,7 +140,7 @@ namespace UserInterface.Forms.Customer
                 ReloadCustomers?.Invoke(buttonSave, new CustomersEventArgs(klienci));
                 Close();
             }
-            
+
         }
 
 
@@ -146,6 +150,9 @@ namespace UserInterface.Forms.Customer
         }
 
 
+        #endregion
+
+        #region Event
         private void buttonSave_Click(object sender, EventArgs e)
         {
             Save();
@@ -160,5 +167,7 @@ namespace UserInterface.Forms.Customer
         {
             Cancel();
         }
+        #endregion
+
     }
 }

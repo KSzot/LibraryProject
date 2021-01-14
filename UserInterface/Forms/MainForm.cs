@@ -84,6 +84,19 @@ namespace UserInterface.Forms
                 throw;
             }
         }
+
+        private void buttonBook_Click(object sender, EventArgs e)
+        {
+            if (BooksForm.IsNull)
+            {
+
+                ShowFormInTabPage(out BooksPage, BooksForm.Instance);
+            }
+            else
+            {
+                tabControlMain.SelectedTab = BooksPage;
+            }
+        }
         #endregion
 
         #region Functions
@@ -103,17 +116,6 @@ namespace UserInterface.Forms
         }
         #endregion
 
-        private void buttonBook_Click(object sender, EventArgs e)
-        {
-            if (BooksForm.IsNull)
-            {
 
-                ShowFormInTabPage(out BooksPage, BooksForm.Instance);
-            }
-            else
-            {
-                tabControlMain.SelectedTab = BooksPage;
-            }
-        }
     }
 }

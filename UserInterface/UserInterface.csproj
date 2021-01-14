@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CustomersEventArgs.cs" />
+    <Compile Include="Classes\Email.cs" />
+    <Compile Include="Classes\EmailBuilder.cs" />
+    <Compile Include="Classes\MailService.cs" />
     <Compile Include="Connected Services\Api\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +78,12 @@
     </Compile>
     <Compile Include="Forms\Books\BooksForm.Designer.cs">
       <DependentUpon>BooksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomerEmailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\CustomerEmailForm.Designer.cs">
+      <DependentUpon>CustomerEmailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Customer\CustomersAddForm.cs">
       <SubType>Form</SubType>
@@ -109,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Books\BooksForm.resx">
       <DependentUpon>BooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\CustomerEmailForm.resx">
+      <DependentUpon>CustomerEmailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Customer\CustomersAddForm.resx">
       <DependentUpon>CustomersAddForm.cs</DependentUpon>
@@ -208,6 +221,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -43,8 +44,8 @@
             this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonSend = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).BeginInit();
@@ -69,6 +70,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.White;
+            this.panelTop.Controls.Add(this.buttonSend);
             this.panelTop.Controls.Add(this.textBoxSearch);
             this.panelTop.Controls.Add(this.buttonDelete);
             this.panelTop.Controls.Add(this.buttonModify);
@@ -78,6 +80,18 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(743, 34);
             this.panelTop.TabIndex = 0;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBoxSearch.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(599, 0);
+            this.textBoxSearch.Multiline = true;
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(144, 34);
+            this.textBoxSearch.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.textBoxSearch, "Wyszukaj klienta po nazwisku");
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // buttonDelete
             // 
@@ -199,17 +213,19 @@
             // 
             this.klienciBindingSource.DataSource = typeof(UserInterface.Api.Klienci);
             // 
-            // textBoxSearch
+            // buttonSend
             // 
-            this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBoxSearch.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(599, 0);
-            this.textBoxSearch.Multiline = true;
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(144, 34);
-            this.textBoxSearch.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.textBoxSearch, "Wyszukaj klienta po nazwisku");
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.buttonSend.BackColor = System.Drawing.Color.White;
+            this.buttonSend.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonSend.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSend.Location = new System.Drawing.Point(487, 0);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(112, 34);
+            this.buttonSend.TabIndex = 6;
+            this.buttonSend.Text = "Email";
+            this.buttonSend.UseVisualStyleBackColor = false;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // CustomersForm
             // 
@@ -247,5 +263,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonSend;
     }
 }

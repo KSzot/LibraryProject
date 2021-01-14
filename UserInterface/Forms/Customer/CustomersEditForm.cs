@@ -142,6 +142,7 @@ namespace UserInterface.Forms.Customer
         }
         #endregion
 
+        #region Event
         private void buttonSave_Click(object sender, EventArgs e)
         {
             Save();
@@ -151,5 +152,7 @@ namespace UserInterface.Forms.Customer
         {
             Cancel();
         }
+        #endregion
+
     }
 }

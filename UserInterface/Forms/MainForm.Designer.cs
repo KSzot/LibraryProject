@@ -80,6 +80,7 @@
             this.buttonBook.Text = "Zbiory";
             this.buttonBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBook.UseVisualStyleBackColor = false;
+            this.buttonBook.Click += new System.EventHandler(this.buttonBook_Click);
             // 
             // splitter1
             // 

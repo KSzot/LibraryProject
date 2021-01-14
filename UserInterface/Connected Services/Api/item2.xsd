@@ -9,9 +9,102 @@
       <xs:element minOccurs="0" name="Plec" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Wiek" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Wypoes" nillable="true" type="tns:ArrayOfWypo" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Klienci" nillable="true" type="tns:Klienci" />
+  <xs:complexType name="ArrayOfWypo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wypo" nillable="true" type="tns:Wypo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWypo" nillable="true" type="tns:ArrayOfWypo" />
+  <xs:complexType name="Wypo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataW" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DataZ" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDKasety" type="xs:int" />
+      <xs:element minOccurs="0" name="IDKlienta" type="xs:int" />
+      <xs:element minOccurs="0" name="Kasety" nillable="true" type="tns:Kasety" />
+      <xs:element minOccurs="0" name="Klienci" nillable="true" type="tns:Klienci" />
+      <xs:element minOccurs="0" name="Kwota" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wypo" nillable="true" type="tns:Wypo" />
+  <xs:complexType name="Kasety">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filmy" nillable="true" type="tns:Filmy" />
+      <xs:element minOccurs="0" name="IDFilmu" type="xs:int" />
+      <xs:element minOccurs="0" name="IDKasety" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Wypoes" nillable="true" type="tns:ArrayOfWypo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kasety" nillable="true" type="tns:Kasety" />
+  <xs:complexType name="Filmy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cena" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IDFilmu" type="xs:int" />
+      <xs:element minOccurs="0" name="IDRezyser" type="xs:int" />
+      <xs:element minOccurs="0" name="Kaseties" nillable="true" type="tns:ArrayOfKasety" />
+      <xs:element minOccurs="0" name="Kolor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Krajs" nillable="true" type="tns:ArrayOfKraj" />
+      <xs:element minOccurs="0" name="Opis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rezyser" nillable="true" type="tns:Rezyser" />
+      <xs:element minOccurs="0" name="Rodzajs" nillable="true" type="tns:ArrayOfRodzaj" />
+      <xs:element minOccurs="0" name="Tytul" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Filmy" nillable="true" type="tns:Filmy" />
+  <xs:complexType name="ArrayOfKasety">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Kasety" nillable="true" type="tns:Kasety" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKasety" nillable="true" type="tns:ArrayOfKasety" />
+  <xs:complexType name="ArrayOfKraj">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Kraj" nillable="true" type="tns:Kraj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKraj" nillable="true" type="tns:ArrayOfKraj" />
+  <xs:complexType name="Kraj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filmies" nillable="true" type="tns:ArrayOfFilmy" />
+      <xs:element minOccurs="0" name="IDKraj" type="xs:int" />
+      <xs:element minOccurs="0" name="KrajProdukcji" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kraj" nillable="true" type="tns:Kraj" />
+  <xs:complexType name="ArrayOfFilmy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Filmy" nillable="true" type="tns:Filmy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilmy" nillable="true" type="tns:ArrayOfFilmy" />
+  <xs:complexType name="Rezyser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filmies" nillable="true" type="tns:ArrayOfFilmy" />
+      <xs:element minOccurs="0" name="IDRezyser" type="xs:int" />
+      <xs:element minOccurs="0" name="Imie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nazwisko" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rezyser" nillable="true" type="tns:Rezyser" />
+  <xs:complexType name="ArrayOfRodzaj">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Rodzaj" nillable="true" type="tns:Rodzaj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRodzaj" nillable="true" type="tns:ArrayOfRodzaj" />
+  <xs:complexType name="Rodzaj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Filmies" nillable="true" type="tns:ArrayOfFilmy" />
+      <xs:element minOccurs="0" name="IDRodzaj" type="xs:int" />
+      <xs:element minOccurs="0" name="RodzajFilmu" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rodzaj" nillable="true" type="tns:Rodzaj" />
   <xs:complexType name="ArrayOfKlienci">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Klienci" nillable="true" type="tns:Klienci" />

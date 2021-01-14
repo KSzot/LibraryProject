@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserInterface.Forms.Base;
+using UserInterface.Forms.Books;
 using UserInterface.Forms.Customer;
 
 namespace UserInterface.Forms
@@ -22,6 +23,7 @@ namespace UserInterface.Forms
         #region Fields
 
         private TabPage CustomPage;
+        private TabPage BooksPage;
         #endregion
 
         #region Events
@@ -100,5 +102,18 @@ namespace UserInterface.Forms
             tabControlMain.SelectedTab = tabPage;
         }
         #endregion
+
+        private void buttonBook_Click(object sender, EventArgs e)
+        {
+            if (BooksForm.IsNull)
+            {
+
+                ShowFormInTabPage(out BooksPage, BooksForm.Instance);
+            }
+            else
+            {
+                tabControlMain.SelectedTab = BooksPage;
+            }
+        }
     }
 }

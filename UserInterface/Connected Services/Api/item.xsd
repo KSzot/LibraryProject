@@ -77,4 +77,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllBooks">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllBooksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LibraryApi" minOccurs="0" name="GetAllBooksResult" nillable="true" type="q6:ArrayOfKsiazka" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

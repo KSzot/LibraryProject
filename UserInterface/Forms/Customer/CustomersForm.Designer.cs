@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.buttonSend = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridViewCustomers = new System.Windows.Forms.DataGridView();
+            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.iDKlientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wiekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonSend = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).BeginInit();
@@ -80,6 +80,20 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(743, 34);
             this.panelTop.TabIndex = 0;
+            // 
+            // buttonSend
+            // 
+            this.buttonSend.BackColor = System.Drawing.Color.White;
+            this.buttonSend.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonSend.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSend.Location = new System.Drawing.Point(487, 0);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(112, 34);
+            this.buttonSend.TabIndex = 6;
+            this.buttonSend.Text = "Email";
+            this.buttonSend.UseVisualStyleBackColor = false;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // textBoxSearch
             // 
@@ -148,7 +162,7 @@
             this.nazwiskoDataGridViewTextBoxColumn,
             this.plecDataGridViewTextBoxColumn,
             this.wiekDataGridViewTextBoxColumn,
-            this.adresDataGridViewTextBoxColumn,
+            this.Email,
             this.telefonDataGridViewTextBoxColumn});
             this.dataGridViewCustomers.DataSource = this.klienciBindingSource;
             this.dataGridViewCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -158,6 +172,10 @@
             this.dataGridViewCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomers.Size = new System.Drawing.Size(743, 439);
             this.dataGridViewCustomers.TabIndex = 1;
+            // 
+            // klienciBindingSource
+            // 
+            this.klienciBindingSource.DataSource = typeof(UserInterface.Api.Klienci);
             // 
             // iDKlientaDataGridViewTextBoxColumn
             // 
@@ -194,12 +212,12 @@
             this.wiekDataGridViewTextBoxColumn.Name = "wiekDataGridViewTextBoxColumn";
             this.wiekDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // adresDataGridViewTextBoxColumn
+            // Email
             // 
-            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
-            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
-            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
-            this.adresDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // telefonDataGridViewTextBoxColumn
             // 
@@ -208,24 +226,6 @@
             this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // klienciBindingSource
-            // 
-            this.klienciBindingSource.DataSource = typeof(UserInterface.Api.Klienci);
-            // 
-            // buttonSend
-            // 
-            this.buttonSend.BackColor = System.Drawing.Color.White;
-            this.buttonSend.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonSend.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSend.Location = new System.Drawing.Point(487, 0);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(112, 34);
-            this.buttonSend.TabIndex = 6;
-            this.buttonSend.Text = "Email";
-            this.buttonSend.UseVisualStyleBackColor = false;
-            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // CustomersForm
             // 
@@ -254,15 +254,16 @@
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.BindingSource klienciBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDKlientaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn plecDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wiekDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button buttonSend;
     }
 }

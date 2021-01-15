@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
+using System.Windows.Forms;
 
 namespace UserInterface.Classes
 {
@@ -22,7 +23,7 @@ namespace UserInterface.Classes
                     Host = "smtp.gmail.com",
                     Port = 587,
                     UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential("horticalctest@gmail.com", "Qwerty1@"),
+                    Credentials = new NetworkCredential("horticalctest@gmail.com", "MojeHaslo!"),
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network
                 };
@@ -32,7 +33,11 @@ namespace UserInterface.Classes
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show(
+                "Wystąpił bład. Proszę spróbować później",
+                 "Wysyłanie wiadomości",
+                  MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
 
         }

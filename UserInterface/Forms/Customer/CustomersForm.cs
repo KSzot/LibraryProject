@@ -128,19 +128,19 @@ namespace UserInterface.Forms.Customer
 
             if (person != null)
             {
-                //klienciBindingSource.Remove(person);
-                LibraryServiceClient api = new LibraryServiceClient();
-                var customersList = (List<Klienci>)klienciBindingSource.DataSource;
-                var customerRemove = customersList.FirstOrDefault(el => el.IDKlienta == person.IDKlienta);
-                customersList.Remove(customerRemove);
-                klienciBindingSource.DataSource = customersList.ToList();
-                api.DeleteClientAfterID(clientId);
-                //klienciBindingSource.DataSource = api.GetAllClient();
-                if (dataGridViewCustomers.Rows.Count > 1)
-                {
-                    dataGridViewCustomers.ClearSelection();
-                    dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
-                }
+                    //klienciBindingSource.Remove(person);
+                    LibraryServiceClient api = new LibraryServiceClient();
+                    var customersList = (List<Klienci>)klienciBindingSource.DataSource;
+                    var customerRemove = customersList.FirstOrDefault(el => el.IDKlienta == person.IDKlienta);
+                    customersList.Remove(customerRemove);
+                    klienciBindingSource.DataSource = customersList.ToList();
+                    api.DeleteClientAfterID(clientId);
+                    //klienciBindingSource.DataSource = api.GetAllClient();
+                    if (dataGridViewCustomers.Rows.Count > 1)
+                    {
+                        dataGridViewCustomers.ClearSelection();
+                        dataGridViewCustomers.Rows[dataGridViewCustomers.Rows.Count - 1].Selected = true;
+                    }
             }
 
         }
@@ -160,8 +160,21 @@ namespace UserInterface.Forms.Customer
             Klienci person = findClientAfterId(clientId);
             if (person != null)
             {
-                CustomerEmailForm frm = new CustomerEmailForm(person.Imie, person.Nazwisko);
-                frm.ShowDialog();
+                string tmp = person.Email;
+                if (string.IsNullOrEmpty(tmp.Trim()))
+                {
+                    MessageBox.Show(
+                    "Brak adresu mail",
+                    "Wysyłanie wiadomości",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                else
+                {
+                    CustomerEmailForm frm = new CustomerEmailForm(person.Imie, person.Nazwisko, person.Email);
+                    frm.ShowDialog();
+                }
+                
             }
         }
         #endregion

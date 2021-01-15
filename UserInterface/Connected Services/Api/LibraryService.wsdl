@@ -43,6 +43,12 @@
   <wsdl:message name="ILibraryService_GetAllClient_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllClientResponse" />
   </wsdl:message>
+  <wsdl:message name="ILibraryService_GetAllBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBooks" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetAllBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBooksResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILibraryService">
     <wsdl:operation name="AddClientToDatabase">
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/AddClientToDatabase" message="tns:ILibraryService_AddClientToDatabase_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="GetAllClient">
       <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetAllClient" message="tns:ILibraryService_GetAllClient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetAllClientResponse" message="tns:ILibraryService_GetAllClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetAllBooks" message="tns:ILibraryService_GetAllBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetAllBooksResponse" message="tns:ILibraryService_GetAllBooks_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILibraryService" type="tns:ILibraryService">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllClient">
       <soap:operation soapAction="http://tempuri.org/ILibraryService/GetAllClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooks">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetAllBooks" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

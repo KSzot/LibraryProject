@@ -17,14 +17,16 @@ namespace UserInterface.Forms.Customer
         #region Fields
         private string NameClient { get; set; }
         private string LastNameClient { get; set; }
+        private string Email { get; set; }
         #endregion
 
 
 
-        public CustomerEmailForm(string name, string lastname)
+        public CustomerEmailForm(string name, string lastname, string email)
         {
             NameClient = name.Trim();
             LastNameClient = lastname.Trim();
+            Email = email;
             InitializeComponent();
             InitialDate();
         }
@@ -47,7 +49,7 @@ namespace UserInterface.Forms.Customer
         {
             var ms = new MailService();
             ms.SendEmail(email => email.From("horticalctest@gmail.com")
-            .To("szot151@gmail.com")
+            .To(Email.Trim())
             .Subject(textBoxTopic.Text)
             .Body(richTextBoxMain.Text));
             Close();

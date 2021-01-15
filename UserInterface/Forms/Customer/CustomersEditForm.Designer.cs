@@ -191,9 +191,9 @@
             this.labelAddress.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAddress.Location = new System.Drawing.Point(7, 31);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(39, 15);
+            this.labelAddress.Size = new System.Drawing.Size(36, 15);
             this.labelAddress.TabIndex = 6;
-            this.labelAddress.Text = "Adres";
+            this.labelAddress.Text = "Email";
             // 
             // buttonSave
             // 

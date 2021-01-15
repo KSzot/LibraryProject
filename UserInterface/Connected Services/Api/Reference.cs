@@ -23,7 +23,7 @@ namespace UserInterface.Api {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AdresField;
+        private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDKlientaField;
@@ -43,9 +43,6 @@ namespace UserInterface.Api {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> WiekField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Wypo[] WypoesField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -57,14 +54,14 @@ namespace UserInterface.Api {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Adres {
+        public string Email {
             get {
-                return this.AdresField;
+                return this.EmailField;
             }
             set {
-                if ((object.ReferenceEquals(this.AdresField, value) != true)) {
-                    this.AdresField = value;
-                    this.RaisePropertyChanged("Adres");
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
                 }
             }
         }
@@ -147,19 +144,6 @@ namespace UserInterface.Api {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Wypo[] Wypoes {
-            get {
-                return this.WypoesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WypoesField, value) != true)) {
-                    this.WypoesField = value;
-                    this.RaisePropertyChanged("Wypoes");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -172,289 +156,18 @@ namespace UserInterface.Api {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Wypo", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ksiazka", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
     [System.SerializableAttribute()]
-    public partial class Wypo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Ksiazka : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DataWField;
+        private int IDKsiazkiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> DataZField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDKasetyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDKlientaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Kasety KasetyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Klienci KlienciField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> KwotaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DataW {
-            get {
-                return this.DataWField;
-            }
-            set {
-                if ((this.DataWField.Equals(value) != true)) {
-                    this.DataWField = value;
-                    this.RaisePropertyChanged("DataW");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> DataZ {
-            get {
-                return this.DataZField;
-            }
-            set {
-                if ((this.DataZField.Equals(value) != true)) {
-                    this.DataZField = value;
-                    this.RaisePropertyChanged("DataZ");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDKasety {
-            get {
-                return this.IDKasetyField;
-            }
-            set {
-                if ((this.IDKasetyField.Equals(value) != true)) {
-                    this.IDKasetyField = value;
-                    this.RaisePropertyChanged("IDKasety");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDKlienta {
-            get {
-                return this.IDKlientaField;
-            }
-            set {
-                if ((this.IDKlientaField.Equals(value) != true)) {
-                    this.IDKlientaField = value;
-                    this.RaisePropertyChanged("IDKlienta");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Kasety Kasety {
-            get {
-                return this.KasetyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KasetyField, value) != true)) {
-                    this.KasetyField = value;
-                    this.RaisePropertyChanged("Kasety");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Klienci Klienci {
-            get {
-                return this.KlienciField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KlienciField, value) != true)) {
-                    this.KlienciField = value;
-                    this.RaisePropertyChanged("Klienci");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> Kwota {
-            get {
-                return this.KwotaField;
-            }
-            set {
-                if ((this.KwotaField.Equals(value) != true)) {
-                    this.KwotaField = value;
-                    this.RaisePropertyChanged("Kwota");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Kasety", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
-    [System.SerializableAttribute()]
-    public partial class Kasety : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Filmy FilmyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDFilmuField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDKasetyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Wypo[] WypoesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Filmy Filmy {
-            get {
-                return this.FilmyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilmyField, value) != true)) {
-                    this.FilmyField = value;
-                    this.RaisePropertyChanged("Filmy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDFilmu {
-            get {
-                return this.IDFilmuField;
-            }
-            set {
-                if ((this.IDFilmuField.Equals(value) != true)) {
-                    this.IDFilmuField = value;
-                    this.RaisePropertyChanged("IDFilmu");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDKasety {
-            get {
-                return this.IDKasetyField;
-            }
-            set {
-                if ((this.IDKasetyField.Equals(value) != true)) {
-                    this.IDKasetyField = value;
-                    this.RaisePropertyChanged("IDKasety");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Wypo[] Wypoes {
-            get {
-                return this.WypoesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WypoesField, value) != true)) {
-                    this.WypoesField = value;
-                    this.RaisePropertyChanged("Wypoes");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Filmy", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
-    [System.SerializableAttribute()]
-    public partial class Filmy : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal CenaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDFilmuField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDRezyserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Kasety[] KasetiesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string KolorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Kraj[] KrajsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OpisField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Rezyser RezyserField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Rodzaj[] RodzajsField;
+        private UserInterface.Api.KsiazkaAutor KsiazkaAutorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TytulField;
@@ -470,118 +183,27 @@ namespace UserInterface.Api {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Cena {
+        public int IDKsiazki {
             get {
-                return this.CenaField;
+                return this.IDKsiazkiField;
             }
             set {
-                if ((this.CenaField.Equals(value) != true)) {
-                    this.CenaField = value;
-                    this.RaisePropertyChanged("Cena");
+                if ((this.IDKsiazkiField.Equals(value) != true)) {
+                    this.IDKsiazkiField = value;
+                    this.RaisePropertyChanged("IDKsiazki");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDFilmu {
+        public UserInterface.Api.KsiazkaAutor KsiazkaAutor {
             get {
-                return this.IDFilmuField;
+                return this.KsiazkaAutorField;
             }
             set {
-                if ((this.IDFilmuField.Equals(value) != true)) {
-                    this.IDFilmuField = value;
-                    this.RaisePropertyChanged("IDFilmu");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDRezyser {
-            get {
-                return this.IDRezyserField;
-            }
-            set {
-                if ((this.IDRezyserField.Equals(value) != true)) {
-                    this.IDRezyserField = value;
-                    this.RaisePropertyChanged("IDRezyser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Kasety[] Kaseties {
-            get {
-                return this.KasetiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KasetiesField, value) != true)) {
-                    this.KasetiesField = value;
-                    this.RaisePropertyChanged("Kaseties");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Kolor {
-            get {
-                return this.KolorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KolorField, value) != true)) {
-                    this.KolorField = value;
-                    this.RaisePropertyChanged("Kolor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Kraj[] Krajs {
-            get {
-                return this.KrajsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KrajsField, value) != true)) {
-                    this.KrajsField = value;
-                    this.RaisePropertyChanged("Krajs");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Opis {
-            get {
-                return this.OpisField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OpisField, value) != true)) {
-                    this.OpisField = value;
-                    this.RaisePropertyChanged("Opis");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Rezyser Rezyser {
-            get {
-                return this.RezyserField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RezyserField, value) != true)) {
-                    this.RezyserField = value;
-                    this.RaisePropertyChanged("Rezyser");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Rodzaj[] Rodzajs {
-            get {
-                return this.RodzajsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RodzajsField, value) != true)) {
-                    this.RodzajsField = value;
-                    this.RaisePropertyChanged("Rodzajs");
+                if ((object.ReferenceEquals(this.KsiazkaAutorField, value) != true)) {
+                    this.KsiazkaAutorField = value;
+                    this.RaisePropertyChanged("KsiazkaAutor");
                 }
             }
         }
@@ -611,21 +233,114 @@ namespace UserInterface.Api {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rezyser", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="KsiazkaAutor", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
     [System.SerializableAttribute()]
-    public partial class Rezyser : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class KsiazkaAutor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Filmy[] FilmiesField;
+        private UserInterface.Api.Autor AutorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDRezyserField;
+        private int IDAutorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDKsiazkaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.Api.Ksiazka KsiazkaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.Api.Autor Autor {
+            get {
+                return this.AutorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AutorField, value) != true)) {
+                    this.AutorField = value;
+                    this.RaisePropertyChanged("Autor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IDAutor {
+            get {
+                return this.IDAutorField;
+            }
+            set {
+                if ((this.IDAutorField.Equals(value) != true)) {
+                    this.IDAutorField = value;
+                    this.RaisePropertyChanged("IDAutor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IDKsiazka {
+            get {
+                return this.IDKsiazkaField;
+            }
+            set {
+                if ((this.IDKsiazkaField.Equals(value) != true)) {
+                    this.IDKsiazkaField = value;
+                    this.RaisePropertyChanged("IDKsiazka");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.Api.Ksiazka Ksiazka {
+            get {
+                return this.KsiazkaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KsiazkaField, value) != true)) {
+                    this.KsiazkaField = value;
+                    this.RaisePropertyChanged("Ksiazka");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Autor", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
+    [System.SerializableAttribute()]
+    public partial class Autor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDAutorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ImieField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.Api.KsiazkaAutor[] KsiazkaAutorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NazwiskoField;
@@ -641,27 +356,14 @@ namespace UserInterface.Api {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Filmy[] Filmies {
+        public int IDAutor {
             get {
-                return this.FilmiesField;
+                return this.IDAutorField;
             }
             set {
-                if ((object.ReferenceEquals(this.FilmiesField, value) != true)) {
-                    this.FilmiesField = value;
-                    this.RaisePropertyChanged("Filmies");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDRezyser {
-            get {
-                return this.IDRezyserField;
-            }
-            set {
-                if ((this.IDRezyserField.Equals(value) != true)) {
-                    this.IDRezyserField = value;
-                    this.RaisePropertyChanged("IDRezyser");
+                if ((this.IDAutorField.Equals(value) != true)) {
+                    this.IDAutorField = value;
+                    this.RaisePropertyChanged("IDAutor");
                 }
             }
         }
@@ -680,6 +382,19 @@ namespace UserInterface.Api {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.Api.KsiazkaAutor[] KsiazkaAutors {
+            get {
+                return this.KsiazkaAutorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KsiazkaAutorsField, value) != true)) {
+                    this.KsiazkaAutorsField = value;
+                    this.RaisePropertyChanged("KsiazkaAutors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Nazwisko {
             get {
                 return this.NazwiskoField;
@@ -688,160 +403,6 @@ namespace UserInterface.Api {
                 if ((object.ReferenceEquals(this.NazwiskoField, value) != true)) {
                     this.NazwiskoField = value;
                     this.RaisePropertyChanged("Nazwisko");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Kraj", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
-    [System.SerializableAttribute()]
-    public partial class Kraj : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Filmy[] FilmiesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDKrajField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string KrajProdukcjiField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Filmy[] Filmies {
-            get {
-                return this.FilmiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilmiesField, value) != true)) {
-                    this.FilmiesField = value;
-                    this.RaisePropertyChanged("Filmies");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDKraj {
-            get {
-                return this.IDKrajField;
-            }
-            set {
-                if ((this.IDKrajField.Equals(value) != true)) {
-                    this.IDKrajField = value;
-                    this.RaisePropertyChanged("IDKraj");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string KrajProdukcji {
-            get {
-                return this.KrajProdukcjiField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.KrajProdukcjiField, value) != true)) {
-                    this.KrajProdukcjiField = value;
-                    this.RaisePropertyChanged("KrajProdukcji");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rodzaj", Namespace="http://schemas.datacontract.org/2004/07/LibraryApi")]
-    [System.SerializableAttribute()]
-    public partial class Rodzaj : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.Api.Filmy[] FilmiesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDRodzajField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RodzajFilmuField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.Api.Filmy[] Filmies {
-            get {
-                return this.FilmiesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilmiesField, value) != true)) {
-                    this.FilmiesField = value;
-                    this.RaisePropertyChanged("Filmies");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IDRodzaj {
-            get {
-                return this.IDRodzajField;
-            }
-            set {
-                if ((this.IDRodzajField.Equals(value) != true)) {
-                    this.IDRodzajField = value;
-                    this.RaisePropertyChanged("IDRodzaj");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RodzajFilmu {
-            get {
-                return this.RodzajFilmuField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RodzajFilmuField, value) != true)) {
-                    this.RodzajFilmuField = value;
-                    this.RaisePropertyChanged("RodzajFilmu");
                 }
             }
         }
@@ -895,6 +456,12 @@ namespace UserInterface.Api {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllClient", ReplyAction="http://tempuri.org/ILibraryService/GetAllClientResponse")]
         System.Threading.Tasks.Task<UserInterface.Api.Klienci[]> GetAllClientAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllBooks", ReplyAction="http://tempuri.org/ILibraryService/GetAllBooksResponse")]
+        UserInterface.Api.Ksiazka[] GetAllBooks();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILibraryService/GetAllBooks", ReplyAction="http://tempuri.org/ILibraryService/GetAllBooksResponse")]
+        System.Threading.Tasks.Task<UserInterface.Api.Ksiazka[]> GetAllBooksAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -970,6 +537,14 @@ namespace UserInterface.Api {
         
         public System.Threading.Tasks.Task<UserInterface.Api.Klienci[]> GetAllClientAsync() {
             return base.Channel.GetAllClientAsync();
+        }
+        
+        public UserInterface.Api.Ksiazka[] GetAllBooks() {
+            return base.Channel.GetAllBooks();
+        }
+        
+        public System.Threading.Tasks.Task<UserInterface.Api.Ksiazka[]> GetAllBooksAsync() {
+            return base.Channel.GetAllBooksAsync();
         }
     }
 }

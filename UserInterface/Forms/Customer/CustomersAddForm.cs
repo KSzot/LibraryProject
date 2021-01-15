@@ -86,7 +86,7 @@ namespace UserInterface.Forms.Customer
 
             StringBuilder sbWarningMessage = new StringBuilder();
 
-            string adressWarningMessage = "Pole adress nie zostało wypełnione.";
+            string adressWarningMessage = "Pole email nie zostało wypełnione.";
             string phoneWarningMessage = "Pole telefon nie zostało wypełnione.";
             string ageWarningMessage = "Pole wiek nie zostało wypełnione.";
 
@@ -134,7 +134,7 @@ namespace UserInterface.Forms.Customer
                     Nazwisko = userControlInputLastName.TekstInput,
                     Plec = comboBoxGender.Text,
                     Wiek = string.IsNullOrEmpty(textBoxAge.Text) ? 0 : Convert.ToInt32(textBoxAge.Text),
-                    Adres = textBoxAddress.Text,
+                    Email = textBoxAddress.Text,
                     Telefon = textBoxPhone.Text,
                 };
                 ReloadCustomers?.Invoke(buttonSave, new CustomersEventArgs(klienci));
